@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Product</title>
+</head>
+<body>
+
+<h1>Product Details</h1>
+<div id="product"></div>
+
+<script src="script.js"></script>
+
+<script>
+const id = localStorage.getItem("productId");
+
+let product = null;
+
+for (let i = 0; i < products.length; i++) {
+  if (products[i].id == id) {
+    product = products[i];
+    break;
+  }
+}
+if (product) {
+  document.getElementById("product").innerHTML = `
+    <div class="card">
+      <img src="${product.image}" width="150">
+      <h2>${product.name}</h2>
+      <p>₹${product.price}</p>
+      <button onclick="addToCart(${product.id})">Add to Cart</button>
+      <br><br>
+      <a href="index.html">⬅ Back</a>
+    </div>
+  `;
+}
+
+</script>
+
+</body>
+</html>
