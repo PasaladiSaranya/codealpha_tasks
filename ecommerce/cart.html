@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Your Cart</h1>
+<div id="cart"></div>
+<button id="orderBtn" onclick="placeOrder()">Place Order</button>
+
+<script>
+const products = [
+  { id: 1, name: "Shoes", price: 999 },
+  { id: 2, name: "T-Shirt", price: 499 }
+];
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+let total = 0;
+
+const cartDiv = document.getElementById("cart");
+const orderBtn = document.getElementById("orderBtn");
+
+// 🟢 CHECK EMPTY CART
+if (cart.length === 0) {
+  cartDiv.innerHTML = "🛒 Your cart is empty";
+  orderBtn.style.display = "none"; // hide button
+} else {
+
+  cart.forEach(id => {
+    const p = products.find(x => x.id == id);
+
+    if (p) {
+      total += p.price;
+
+      cartDiv.innerHTML += `
+        <p>${p.name} - ₹${p.price}</p>
+      `;
+    }
+  });
+
+  cartDiv.innerHTML += `<h3>Total: ₹${total}</h3>`;
+}
+
+function placeOrder() {
+  localStorage.setItem("order", JSON.stringify(cart));
+  localStorage.removeItem("cart");
+  alert("Order placed!");
+  location.reload(); // refresh page after order
+}
+</script>
+
+</body>
+</html>
