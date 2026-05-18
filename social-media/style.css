@@ -1,0 +1,63 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f7fa;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+/* Header */
+h1 {
+  background: #4a90e2;
+  color: white;
+  padding: 15px;
+  margin: 0;
+}
+
+/* Links */
+a {
+  margin: 10px;
+  text-decoration: none;
+  color: #4a90e2;
+  font-weight: bold;
+}
+
+/* Input + button */
+input {
+  padding: 10px;
+  width: 250px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button {
+  padding: 10px 15px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  background: #4a90e2;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #357abd;
+}
+
+/* Post card */
+.post {
+  background: white;
+  width: 300px;
+  margin: 15px auto;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+  text-align: left;
+}
+
+/* Comments */
+.post div {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #333;
+}
